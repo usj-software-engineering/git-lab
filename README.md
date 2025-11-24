@@ -66,6 +66,7 @@ By the end of this practice, you will:
    - Click **Add people**
    - Add your teammates by their GitHub usernames
    - They'll receive an email invitation to accept
+   - Also, under **General** enable Issues.
 
 3. **Everyone clones the repository**:
    ```bash
@@ -106,6 +107,7 @@ By the end of this practice, you will:
    - Click **Add branch ruleset**
    - Rulset name: "Main branch protection"
    - Target branches → Add target → Include by pattern → Branch naming pattern: `main`
+   - Select **Enforcement** as **Active*
    - Check these boxes:
      - ✅ Require a pull request before merging
      - ✅ Require approvals (set to 1)
