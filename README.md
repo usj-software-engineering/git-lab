@@ -10,7 +10,7 @@ Welcome to your hands-on Git practice! This is a **team lab** designed for 3-4 p
 
 | Name | GitHub Username |
 |------|-----------------|
-| [To be filled] | [To be filled] |
+| [Miquel Llop] | [84Neon84] |
 | [To be filled] | [To be filled] |
 | [To be filled] | [To be filled] |
 | [To be filled] | [To be filled] |
