@@ -13,7 +13,6 @@ Welcome to your hands-on Git practice! This is a **team lab** designed for 3-4 p
 | [Miquel Llop] | [84Neon84] |
 | [Daniel Jiménez] | [Daniijr18] |
 | [Marcos Ibáñez] | [shwmarcos] |
-| [ChaatGeePeeTee] | [💀🥶] |
 
 
 ## 📝 Lab rules
