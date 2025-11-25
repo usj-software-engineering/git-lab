@@ -7,3 +7,5 @@ public class Food {
 
     }
 }
+System.out.println("Pizza - $8.99");
+
