@@ -39,7 +39,9 @@ Visual tools are common in industry and you will use them later. The reason to s
 
 The merge button on GitHub offers three options. Use **Squash and merge** throughout this lab, the same one we used in class: the whole branch is folded into a single commit on `master`, so the history reads as a list of finished tasks rather than a tangle of work in progress.
 
-One side effect to expect. Squashing creates a new commit, so your original commits never literally reach `master`, and `git branch -d` will refuse to delete the branch with a "not fully merged" warning. Once the pull request is merged, `git branch -D` is the right answer.
+One side effect to expect. Squashing creates a new commit, so your original commits never literally reach `master`. When you then delete the local branch, Git will not just do it quietly: `git branch -d` prints a warning saying the branch was merged to its remote but "not yet merged to HEAD". It still deletes it. If you have already pruned the remote branch, it refuses outright and you need `git branch -D`.
+
+Both are fine here. The warning is Git being careful about work it thinks you might lose, and in this case it is looking at the wrong thing.
 
 ## Learning goals
 
@@ -445,6 +447,13 @@ Note that you did not open a new pull request. Pushing to the same branch update
 
 **4. Wait for the green tick.** It takes around 30 seconds. Do not continue until you have it.
 
+> Every so often GitHub simply loses the event and no check ever appears on the pull request, which is indistinguishable from one that is still starting. If nothing has shown up after a couple of minutes, push an empty commit to wake it up:
+>
+> ```bash
+> git commit --allow-empty -m "chore: retrigger checks"
+> git push
+> ```
+
 ### Part 3: review and merge
 
 **5. Review a teammate's pull request.**
@@ -457,7 +466,7 @@ Note that you did not open a new pull request. Pushing to the same branch update
 **6. Merge yours** once it has a green tick and an approval.
 
 - **Merge pull request** → **Squash and merge** → **Confirm squash and merge**
-- Delete the branch when GitHub offers to, then on your laptop with `git branch -D feature/pizza`
+- Delete the branch when GitHub offers to, then on your laptop with `git branch -d feature/pizza` (expect the warning above; add `-D` if it refuses)
 
 </details>
 
