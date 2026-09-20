@@ -1,0 +1,51 @@
+name: Feature Request
+description: Suggest a new menu item or improvement
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggest a new addition to our cafeteria menu system!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Short Description
+      description: What would you like to add or change?
+      placeholder: Add a new breakfast item to the menu
+    validations:
+      required: true
+
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this is complete?
+      placeholder: |
+        - [ ] New item appears in the appropriate category
+        - [ ] Price is displayed correctly
+        - [ ] Menu.java runs without errors
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Menu Category
+      description: Which menu category does this affect?
+      options:
+        - Food
+        - Drinks
+        - Daily Specials
+        - New Category
+    validations:
+      required: true
+
+  - type: input
+    id: price
+    attributes:
+      label: Suggested Price Range
+      placeholder: $5.00 - $10.00
+    validations:
+      required: false

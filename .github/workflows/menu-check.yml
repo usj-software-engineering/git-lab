@@ -1,0 +1,49 @@
+name: Menu validation
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+
+jobs:
+  validate-menu:
+    runs-on: ubuntu-latest
+    name: Check Menu Quality
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Compile the menu
+        run: javac -d build src/*.java
+
+      - name: Reject sold out items
+        run: |
+          if grep -rn "SOLD OUT" src/; then
+            echo "Found SOLD OUT items in the menu (see the lines above)."
+            echo "The menu should only list things people can actually order."
+            exit 1
+          fi
+          echo "All menu items are available."
+
+      - name: Check price format
+        run: |
+          # Every printed line that mentions a price must write it as $X.XX
+          bad=0
+          for file in src/*.java; do
+            if grep -nE 'println\("[^"]*[0-9]' "$file" | grep -vE '\$[0-9]+\.[0-9]{2}'; then
+              echo "  ^ in $file: prices must be written as \$X.XX, for example \$9.99"
+              bad=1
+            fi
+          done
+          if [ "$bad" -eq 1 ]; then
+            exit 1
+          fi
+          echo "All prices are correctly formatted."
