@@ -10,9 +10,9 @@ This is a team lab for 3 to 4 people. You will run a real team workflow on a uni
 
 | Name | GitHub username |
 |------|-----------------|
-| | |
-| | |
-| | |
+| Manuel Martínez Merino | manuelmar23 |
+| Adrian Rodenas | AdrianRodenas |
+| Adrian Castelar | adriiii27 |
 | | |
 
 ## Lab rules
