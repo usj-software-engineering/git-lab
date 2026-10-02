@@ -10,9 +10,9 @@ This is a team lab for 3 to 4 people. You will run a real team workflow on a uni
 
 | Name | GitHub username |
 |------|-----------------|
-| | |
-| | |
-| | |
+|Aday |AdayPradera |
+|Iván |lvan446|
+|Víctor |viictorld |
 | | |
 
 ## Lab rules
